@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello YNA</title>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+
+    <h1 class="main-header">ShoppingList</h1>
+
+    <div id="app">
+
+        <div class="shopping-list">
+
+            <h3 class="title">Add your items here</h3>
+
+            <div class="items-list">
+
+                <div class="item" v-for="item in items">
+                    <input type="checkbox" @change="checkedItem(item)">
+                    <input type="text" 
+                        :value="item.name" 
+                        :disabled="item.checked" 
+                        @focus="setItemEdit(item)">
+                        <span class="remove-item" v-if="editItem.id == item.id" @click="removeItemFromList(item.id)">x</span>
+                </div>
+
+                <div class="add-new-item">
+                    <input type="text" placeholder="Add new item" 
+                        v-model="newItem" 
+                        @keyup.enter="addItemToList">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="edit-item" v-if="Object.keys(editItem).length">
+
+                <h3 class="title">{{editItem.name}} details</h3>
+
+                <div class="wrap-inputs">
+
+                        <div class="item">
+                            <label>Quantity</label>
+                            <input type="text" :value="editItem.quantity">
+                        </div>
+        
+                        <div class="item">
+                            <label>Price</label>
+                            <input type="text" :value="editItem.price">
+                        </div>
+        
+                        <div class="item">
+                            <label>Description</label>
+                            <input type="text" :value="editItem.description">
+                        </div>
+
+                </div>
+                
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+

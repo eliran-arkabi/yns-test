@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main-header{
+    background-image: linear-gradient(rgba(0,229,145,1), rgba(47,239,188,1));
+    padding:15px;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+#app{
+    width: 800px;
+    margin:0 auto;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shopping-list{
+    width: 300px;
+    
+} 
+
+.shopping-list .title{
+    background-image: linear-gradient(rgba(0,229,145,1), rgba(47,239,188,1));
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.shopping-list .items-list{
+    border: 1px solid #fff4f4;
+    padding: 1rem;
+    min-height: 143px;
+}
+
+.items-list .item, .add-new-item{
+    padding: 5px 10px;
+}
+
+.items-list .item .remove-item {
+    color: red;
+    font-size: 16px;
+}
+
+.items-list .add-new-item{
+    margin-left: 1.4rem;
+}
+
+.edit-item{
+    width: 400px;
+    margin-left: 1.5rem;
+}
+
+.edit-item .title{
+    background-image: linear-gradient(rgba(0,229,145,1), rgba(47,239,188,1));
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-item  .wrap-inputs{
+    border: 1px solid #fff4f4;
+    padding: 1rem;
+    min-height: 143px;
+}
+.edit-item  .wrap-inputs .item{
+    padding: 5px 10px;
+}
+
+.edit-item  .wrap-inputs .item label{
+    display: block;
+}
